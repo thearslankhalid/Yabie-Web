@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@1.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <style type="text/css">
+      .snap-x {
+    scroll-snap-type: x mandatory;
+    
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-start {
+  scroll-snap-align: start;
+}
+    </style>
+</head>
+<body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+    <!-- Display Container (not part of component) START -->
+  <div class="m-10 mx-auto p-8 sm:p-16 lg:p-16 bg-gray-200">
+    <h1 class="text-2xl text-center py-16 sm:text-4xl text-indigo-900 lg:text-left ">Leverage the platforms you already have:</h1>
+    <!-- Carousel Body -->
+    <div class="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl" style="min-height: 19rem;">
+      <div class="relative w-full md:w-3/5 xl:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 19rem;">
+        
+        <div class="absolute inset-0 w-full h-full bg-white "></div>
+        <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+          <img class="w-32 h-32" src="./assets/social/whatsapp.svg">
+        </div>
+      </div>
+      <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg">
+        <div class="p-12 md:pr-24 md:pl-16 md:py-12">
+          <p class="text-gray-600"><span class="text-gray-900">WhatsApp</span> is a social platfrom leveraged by marketers all around the world to build customers. Why can't you?</p>
+          <a class="flex items-baseline mt-3 text-indigo-600 hover:text-indigo-900 focus:text-indigo-900" href="">
+            <span>Learn to earn with Yabie</span>
+            <span class="text-xs ml-1">&#x279c;</span>
+          </a>
+        </div>
+        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+      </div>
+      <button class="absolute top-0 mt-32 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
+        <span class="block" style="transform: scale(-1);">&#x279c;</span>
+      </button>
+      <button class="absolute top-0 mt-32 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-6 focus:outline-none focus:shadow-outline">
+        <span class="block" style="transform: scale(1);">&#x279c;</span>
+      </button>
+    </div>
+    
+    <!-- Carousel Tabs -->
+    <div class="flex pt-12">
+      <button class="px-2 w-1/2"><img class="h-16 mx-auto" src="./assets/social/whatsapp.svg" alt=""></button>
+      <button class="px-2 w-1/2"><img class="h-16 mx-auto" src="./assets/social/facebook.svg" alt=""></button>
+      <button class="px-2 w-1/2"><img class="h-16 mx-auto" src="./assets/social/instagram.svg" alt=""></button>
+      <button class="px-2 w-1/2"><img class="h-16 mx-auto" src="./assets/social/tiktok.svg" alt=""></button>
+    </div>
+    
+  </div>
+  <!-- Display Container (not part of component) END -->
+</body>
+</html>

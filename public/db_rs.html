@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./build/tailwind.css">
+     <style type="text/css">
+        select{
+            display: block;
+            background: url('./assets/down-arrow.png') no-repeat 90% 55%;
+            background-size: 8px;
+        }
+    </style>
+</head>
+
+<body class='bg-white h-full'>
+
+    <!-- Nav Component -->
+ <nav class="flex items-center justify-between flex-wrap p-6 lg:shadow-md shadow-md">
+  <div class="flex items-center flex-shrink-0 text-green_y mr-6">
+    <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+    <span class="font-semibold text-xl tracking-tight">Yabie</span>
+  </div>
+  <div class="block lg:hidden">
+    <button class="flex items-center px-3 py-2 border rounded text-green_y border-green_y" onclick="toggle()">
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+  </div>
+  <div class="w-full block flex-end lg:flex lg:items-center lg:w-auto hidden lg:block" id="menu">
+    <div class="text-sm lg:flex-grow">
+      <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-green_y mr-4 lg:text-base">
+        Settings
+      </a>
+      <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-green_y mr-4 lg:text-base">
+        Log Out
+      </a>
+      <!-- <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-green_y lg:text-base">
+        Contact
+      </a> -->
+    </div>
+    <div>
+      <a href="#" class="inline-block text-base px-4 py-2 lg:ml-4 leading-none border rounded text-green_y border-green_y hover:border-transparent hover:text-white hover:bg-green_y mt-4 lg:mt-0">Place order</a>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<!-- Dashboard Layout -->
+
+<div class="md:flex h-full">
+
+  <!-- Bottom nav on Small Screens -->
+
+
+<div class="w-full flex flex-1 md:hidden">
+  <!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile-->
+  <section id="bottom-navigation" class="block fixed inset-x-0 bottom-0 z-1000 bg-white shadow">
+    <div id="tabs" class="flex justify-between sm-pills">
+
+
+
+      <a data-target='#dashboard' data-pill="0" class="sm-pill  w-full justify-center inline-block text-center pt-2 pb-1">
+         <svg class="h-6 w-6 inline-block mb-1" fill="currentColor" height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
+              <path d="m197.332031 0h-160c-20.585937 0-37.332031 16.746094-37.332031 37.332031v96c0 20.589844 16.746094 37.335938 37.332031 37.335938h160c20.589844 0 37.335938-16.746094 37.335938-37.335938v-96c0-20.585937-16.746094-37.332031-37.335938-37.332031zm0 0"/><path d="m197.332031 213.332031h-160c-20.585937 0-37.332031 16.746094-37.332031 37.335938v224c0 20.585937 16.746094 37.332031 37.332031 37.332031h160c20.589844 0 37.335938-16.746094 37.335938-37.332031v-224c0-20.589844-16.746094-37.335938-37.335938-37.335938zm0 0"/><path d="m474.667969 341.332031h-160c-20.589844 0-37.335938 16.746094-37.335938 37.335938v96c0 20.585937 16.746094 37.332031 37.335938 37.332031h160c20.585937 0 37.332031-16.746094 37.332031-37.332031v-96c0-20.589844-16.746094-37.335938-37.332031-37.335938zm0 0"/><path d="m474.667969 0h-160c-20.589844 0-37.335938 16.746094-37.335938 37.332031v224c0 20.589844 16.746094 37.335938 37.335938 37.335938h160c20.585937 0 37.332031-16.746094 37.332031-37.335938v-224c0-20.585937-16.746094-37.332031-37.332031-37.332031zm0 0"/>
+            </svg>
+        <span class="tab tab-home block text-xs">Dashboard</span>
+      </a>
+
+
+
+
+      <a data-target="#orders" data-pill="1" class="sm-pill active-pill w-full justify-center inline-block text-center pt-2 pb-1">
+        <svg class="h-6 w-6 inline-block mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 512 512" fill="currentColor" xml:space="preserve">
+<g>
+  <g>
+    <path d="M458.732,422.212l-22.862-288.109c-1.419-18.563-17.124-33.098-35.737-33.098h-45.164v66.917
+      c0,8.287-6.708,14.995-14.995,14.995c-8.277,0-14.995-6.708-14.995-14.995v-66.917H187.028v66.917
+      c0,8.287-6.718,14.995-14.995,14.995c-8.287,0-14.995-6.708-14.995-14.995v-66.917h-45.164c-18.613,0-34.318,14.535-35.737,33.058
+      L53.265,422.252c-1.769,23.082,6.238,46.054,21.962,63.028C90.952,502.253,113.244,512,136.386,512h239.236
+      c23.142,0,45.434-9.747,61.159-26.721C452.505,468.305,460.512,445.333,458.732,422.212z M323.56,275.493l-77.553,77.553
+      c-2.929,2.929-6.768,4.398-10.606,4.398c-3.839,0-7.677-1.469-10.606-4.398l-36.347-36.347c-5.858-5.858-5.858-15.345,0-21.203
+      c5.858-5.858,15.355-5.858,21.203,0l25.751,25.741l66.956-66.956c5.848-5.848,15.345-5.848,21.203,0
+      C329.418,260.139,329.418,269.635,323.56,275.493z"/>
+  </g>
+</g>
+<g>
+  <g>
+    <path d="M256.004,0c-54.571,0-98.965,44.404-98.965,98.975v2.029h29.99v-2.029c0-38.037,30.939-68.986,68.976-68.986
+      s68.976,30.949,68.976,68.986v2.029h29.989v-2.029C354.969,44.404,310.575,0,256.004,0z"/>
+  </g>
+</g>
+</svg>
+        <span class="tab tab-kategori block text-xs">Orders</span>
+      </a>
+
+
+
+
+      <a data-target="#favourite"  data-pill="2" class="sm-pill w-full justify-center inline-block text-center pt-2 pb-1">
+        <svg class="h-6 w-6 inline-block mb-1" height="448pt" viewBox="-72 0 448 448" width="448pt" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="m132 122.398438 20 12 48-29.597657-20-9.601562zm0 0"/><path d="m162.398438 86.398438-10.398438-5.597657-48 24 12.800781 8zm0 0"/><path d="m160 211.199219 48-24v-68.800781l-48 30.402343zm0 0"/><path d="m96 187.199219 48 24v-62.398438l-48-30.402343zm0 0"/><path d="m232 384v52.800781l60.800781-60.800781h-52.800781c-4.800781 0-8 3.199219-8 8zm0 0"/><path d="m296 0h-288c-4.800781 0-8 3.199219-8 8v432c0 4.800781 3.199219 8 8 8h208v-64c0-13.601562 10.398438-24 24-24h64v-352c0-4.800781-3.199219-8-8-8zm-192 32h96v16h-96zm-24 67.199219 72-36 72 36v97.601562l-72 36-72-36zm104 284.800781h-136v-16h136zm72-40h-208v-16h208zm0-40h-208v-16h208zm0-40h-208v-16h208zm0 0"/>
+        </svg>
+        <span class="tab tab-whishlist block text-xs">Favourite</span>
+      </a>
+
+
+
+      <a data-target='#profile' data-pill="1" class="sm-pill w-full justify-center inline-block text-center pt-2 pb-1">
+        <svg class="h-6 w-6 inline-block mb-1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 512 512" fill="currentColor" xml:space="preserve">
+
+  <g>
+    <path d="M496.659,312.107l-47.061-36.8c0.597-5.675,1.109-12.309,1.109-19.328c0-7.019-0.491-13.653-1.109-19.328l47.104-36.821
+      c8.747-6.912,11.136-19.179,5.568-29.397L453.331,85.76c-5.227-9.557-16.683-14.464-28.309-10.176l-55.531,22.293
+      c-10.645-7.68-21.803-14.165-33.344-19.349l-8.448-58.901C326.312,8.448,316.584,0,305.086,0h-98.133
+      c-11.499,0-21.205,8.448-22.571,19.456l-8.469,59.115c-11.179,5.035-22.165,11.435-33.28,19.349l-55.68-22.357
+      C76.52,71.531,64.04,76.053,58.856,85.568L9.854,170.347c-5.781,9.771-3.392,22.464,5.547,29.547l47.061,36.8
+      c-0.747,7.189-1.109,13.44-1.109,19.307s0.363,12.117,1.109,19.328l-47.104,36.821c-8.747,6.933-11.115,19.2-5.547,29.397
+      l48.939,84.672c5.227,9.536,16.576,14.485,28.309,10.176l55.531-22.293c10.624,7.659,21.781,14.144,33.323,19.349l8.448,58.88
+      C185.747,503.552,195.454,512,206.974,512h98.133c11.499,0,21.227-8.448,22.592-19.456l8.469-59.093
+      c11.179-5.056,22.144-11.435,33.28-19.371l55.68,22.357c2.688,1.045,5.483,1.579,8.363,1.579c8.277,0,15.893-4.523,19.733-11.563
+      l49.152-85.12C507.838,331.349,505.448,319.083,496.659,312.107z M256.019,341.333c-47.061,0-85.333-38.272-85.333-85.333
+      s38.272-85.333,85.333-85.333s85.333,38.272,85.333,85.333S303.08,341.333,256.019,341.333z"/>
+  </g>
+
+
+</svg>
+        <span class="tab tab-account block text-xs">Settings</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+  <!-- Sidebar -->
+
+
+  <div class="bg-green_y py-6 px-2 md:w-1/4 lg:w-48 text-skin_y hidden md:flex">
+    <ul class="tabs w-full">
+      <li data-target="#dashboard" data-smpill="0" class=" Lgpill rounded my-1">
+        <a  class="flex items-center px-4 py-2 rounded">
+           <svg class="h-6 w-6" fill="currentColor" height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
+              <path d="m197.332031 0h-160c-20.585937 0-37.332031 16.746094-37.332031 37.332031v96c0 20.589844 16.746094 37.335938 37.332031 37.335938h160c20.589844 0 37.335938-16.746094 37.335938-37.335938v-96c0-20.585937-16.746094-37.332031-37.335938-37.332031zm0 0"/><path d="m197.332031 213.332031h-160c-20.585937 0-37.332031 16.746094-37.332031 37.335938v224c0 20.585937 16.746094 37.332031 37.332031 37.332031h160c20.589844 0 37.335938-16.746094 37.335938-37.332031v-224c0-20.589844-16.746094-37.335938-37.335938-37.335938zm0 0"/><path d="m474.667969 341.332031h-160c-20.589844 0-37.335938 16.746094-37.335938 37.335938v96c0 20.585937 16.746094 37.332031 37.335938 37.332031h160c20.585937 0 37.332031-16.746094 37.332031-37.332031v-96c0-20.589844-16.746094-37.335938-37.332031-37.335938zm0 0"/><path d="m474.667969 0h-160c-20.589844 0-37.335938 16.746094-37.335938 37.332031v224c0 20.589844 16.746094 37.335938 37.335938 37.335938h160c20.585937 0 37.332031-16.746094 37.332031-37.335938v-224c0-20.585937-16.746094-37.332031-37.332031-37.332031zm0 0"/>
+            </svg>
+          <span class="ml-4 md:text-md text-lg">Dashboard</span>
+        </a>
+      </li>
+
+
+
+      <li data-target="#orders" data-smpill="1" class="active-pill Lgpill rounded my-1">
+        <a  class="flex items-center px-4 py-2 rounded">
+           <svg class="h-6 w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 512 512" fill="currentColor" xml:space="preserve">
+<g>
+  <g>
+    <path d="M458.732,422.212l-22.862-288.109c-1.419-18.563-17.124-33.098-35.737-33.098h-45.164v66.917
+      c0,8.287-6.708,14.995-14.995,14.995c-8.277,0-14.995-6.708-14.995-14.995v-66.917H187.028v66.917
+      c0,8.287-6.718,14.995-14.995,14.995c-8.287,0-14.995-6.708-14.995-14.995v-66.917h-45.164c-18.613,0-34.318,14.535-35.737,33.058
+      L53.265,422.252c-1.769,23.082,6.238,46.054,21.962,63.028C90.952,502.253,113.244,512,136.386,512h239.236
+      c23.142,0,45.434-9.747,61.159-26.721C452.505,468.305,460.512,445.333,458.732,422.212z M323.56,275.493l-77.553,77.553
+      c-2.929,2.929-6.768,4.398-10.606,4.398c-3.839,0-7.677-1.469-10.606-4.398l-36.347-36.347c-5.858-5.858-5.858-15.345,0-21.203
+      c5.858-5.858,15.355-5.858,21.203,0l25.751,25.741l66.956-66.956c5.848-5.848,15.345-5.848,21.203,0
+      C329.418,260.139,329.418,269.635,323.56,275.493z"/>
+  </g>
+</g>
+<g>
+  <g>
+    <path d="M256.004,0c-54.571,0-98.965,44.404-98.965,98.975v2.029h29.99v-2.029c0-38.037,30.939-68.986,68.976-68.986
+      s68.976,30.949,68.976,68.986v2.029h29.989v-2.029C354.969,44.404,310.575,0,256.004,0z"/>
+  </g>
+</g>
+</svg>
+          <span class="ml-4 md:text-md text-lg">Orders</span>
+        </a>
+      </li>
+
+
+
+      <li data-target="#favourite" data-smpill="2" class="Lgpill rounded my-1">
+        <a  class="flex items-center px-4 py-2 rounded">
+           <svg class="h-6 w-6" height="448pt" viewBox="-72 0 448 448" width="448pt" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="m132 122.398438 20 12 48-29.597657-20-9.601562zm0 0"/><path d="m162.398438 86.398438-10.398438-5.597657-48 24 12.800781 8zm0 0"/><path d="m160 211.199219 48-24v-68.800781l-48 30.402343zm0 0"/><path d="m96 187.199219 48 24v-62.398438l-48-30.402343zm0 0"/><path d="m232 384v52.800781l60.800781-60.800781h-52.800781c-4.800781 0-8 3.199219-8 8zm0 0"/><path d="m296 0h-288c-4.800781 0-8 3.199219-8 8v432c0 4.800781 3.199219 8 8 8h208v-64c0-13.601562 10.398438-24 24-24h64v-352c0-4.800781-3.199219-8-8-8zm-192 32h96v16h-96zm-24 67.199219 72-36 72 36v97.601562l-72 36-72-36zm104 284.800781h-136v-16h136zm72-40h-208v-16h208zm0-40h-208v-16h208zm0-40h-208v-16h208zm0 0"/>
+        </svg>
+          <span class="ml-4 md:text-md text-lg">Favourite</span>
+        </a>
+      </li>
+
+
+        
+      <li data-target="#profile" data-smpill="3"  class="rounded my-1 Lgpill">
+        <a class="flex items-center rounded px-4 py-2">
+          <svg class="h-6 w-6" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 512 512" fill="currentColor" xml:space="preserve">
+
+  <g>
+    <path d="M496.659,312.107l-47.061-36.8c0.597-5.675,1.109-12.309,1.109-19.328c0-7.019-0.491-13.653-1.109-19.328l47.104-36.821
+      c8.747-6.912,11.136-19.179,5.568-29.397L453.331,85.76c-5.227-9.557-16.683-14.464-28.309-10.176l-55.531,22.293
+      c-10.645-7.68-21.803-14.165-33.344-19.349l-8.448-58.901C326.312,8.448,316.584,0,305.086,0h-98.133
+      c-11.499,0-21.205,8.448-22.571,19.456l-8.469,59.115c-11.179,5.035-22.165,11.435-33.28,19.349l-55.68-22.357
+      C76.52,71.531,64.04,76.053,58.856,85.568L9.854,170.347c-5.781,9.771-3.392,22.464,5.547,29.547l47.061,36.8
+      c-0.747,7.189-1.109,13.44-1.109,19.307s0.363,12.117,1.109,19.328l-47.104,36.821c-8.747,6.933-11.115,19.2-5.547,29.397
+      l48.939,84.672c5.227,9.536,16.576,14.485,28.309,10.176l55.531-22.293c10.624,7.659,21.781,14.144,33.323,19.349l8.448,58.88
+      C185.747,503.552,195.454,512,206.974,512h98.133c11.499,0,21.227-8.448,22.592-19.456l8.469-59.093
+      c11.179-5.056,22.144-11.435,33.28-19.371l55.68,22.357c2.688,1.045,5.483,1.579,8.363,1.579c8.277,0,15.893-4.523,19.733-11.563
+      l49.152-85.12C507.838,331.349,505.448,319.083,496.659,312.107z M256.019,341.333c-47.061,0-85.333-38.272-85.333-85.333
+      s38.272-85.333,85.333-85.333s85.333,38.272,85.333,85.333S303.08,341.333,256.019,341.333z"/>
+  </g>
+
+
+</svg>
+
+          <span class="ml-4 md:text-md text-lg">Profile</span>
+        </a>
+
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- Content -->
+  <div id="tabbed-content" class="flex w-full justify-center">
+
+
+
+
+    <div id="dashboard" class="py-4 px-4 panel">
+      <h1 class="text-lg text-center px-4 py-4 sm:text-2xl text-gray-900 lg:text-left">Products</h1>
+
+      <div class="py-4 flex items-center justify-center pb-16 md:pb-0">
+    <div class="block sm:flex sm:flex-wrap sm:justify-center lg:justify-start">
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d1.jpeg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Unstitched Colored Cotton Fabric Summer
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">800</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full rounded-lg py-2 text-center cursor-pointer bg-green_y text-white">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    
+     <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d2.jpg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Alkaram Lawn Summer Collection 2020
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">700</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full rounded-lg py-2 text-center cursor-pointer bg-green_y text-white">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d3.jpeg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Khaadi Brand Supreme Collection Winter
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1200</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full rounded-lg py-2 text-center cursor-pointer bg-green_y text-white">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d4.jpg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Unstitched Colored Cotton Fabric Summer
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1500</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full rounded-lg py-2 text-center cursor-pointer bg-green_y text-white">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d3.jpeg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Unstitched Colored Cotton Fabric Summer
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1500</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full rounded-lg py-2 text-center cursor-pointer bg-green_y text-white">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d2.jpg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Unstitched Colored Cotton Fabric Summer
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1500</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full rounded-lg py-2 text-center cursor-pointer bg-green_y text-white">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+    </div>
+
+
+
+<!-- Orders  -->
+
+    <div id="orders" class="py-4 lg:px-8 panel flex flex-wrap w-full active-panel">
+      
+      <!-- Active Orders -->
+    
+
+
+    <div class="mx-auto px-8 sm:px-8">
+        <div class="py-8">
+            <div>
+                <h2 class="text-2xl font-semibold leading-tight">Active Orders</h2>
+            </div>
+            <div class="my-2 flex ">
+        
+                    <div>
+                       <select
+                            class="py-2 rounded-lg focus:outline-none pl-4 pr-12 mr-4 bg-gray-200 appearance-none">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                        </select>
+                    </div>
+                    <div>
+                       <select
+                            class="py-2 rounded-lg focus:outline-none pl-4 pr-12 bg-gray-200 appearance-none">
+                            <option>All</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div>
+              
+            </div>
+            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 sm:overflow-x-auto scrolling-auto">
+                <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                    <table class="min-w-full leading-normal">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    User
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Date
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face2.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Vera Carpenter
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        Jan 21, 2020
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-green-300 text-green-900">Active</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face3.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Blake Bowman
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        Jan 01, 2020
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-green-300 text-green-900">Active</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face4.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dana Moore
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        Jan 10, 2020
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-orange-300 text-orange-900">Pending</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face5.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Alonzo Cox
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">Jan 18, 2020</p>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                   <span class="rounded-full py-1 px-4 bg-red-300 text-red-900">Cancelled</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face6.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Figao Mart
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">Jan 28, 2020</p>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-orange-300 text-orange-900">Pending</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div
+                        class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                        <span class="text-xs xs:text-sm text-gray-900">
+                            Showing 1 to 5 of 50 Entries
+                        </span>
+                        <div class="inline-flex mt-2 xs:mt-0">
+                            <button
+                                class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
+                                Prev
+                            </button>
+                            <button
+                                class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Completed Orders -->
+
+<div class="mx-auto px-8 sm:px-8">
+        <div class="py-8">
+            <div >
+                <h2 class="text-2xl font-semibold leading-tight">Completed Orders</h2>
+            </div>
+            <div class="my-2 flex">
+                
+                    
+                         <div>
+                       <select
+                            class="py-2 rounded-lg focus:outline-none pl-4 pr-12 mr-4 bg-gray-200 appearance-none">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                        </select>
+                    </div>
+                    <div>
+                       <select
+                            class="py-2 rounded-lg focus:outline-none pl-4 pr-12 bg-gray-200 appearance-none">
+                            <option>Last week</option>
+                            <option>Last 2 weeks</option>
+                            <option>Last month</option>
+                        </select>
+                    </div>
+              
+                   
+                </div>
+                
+            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 sm:overflow-x-auto scrolling-auto">
+                <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                    <table class="min-w-full leading-normal">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    User
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Date
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face7.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Beda Olwest
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        Jan 21, 2020
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    
+                                      <span class="rounded-full py-1 px-4 bg-green-300 text-green-900">Completed</span>
+                              
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face8.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Legot Brooz
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        Jan 01, 2020
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-green-300 text-green-900">Completed</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face9.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Kimer Aleet
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        Jan 10, 2020
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-green-300 text-green-900">Completed</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face10.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Alberto Rio
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">Jan 18, 2020</p>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-green-300 text-green-900">Completed</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-10 h-10">
+                                            <img class="w-full h-full rounded-full"
+                                                src="/assets/faces/face11.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Zeemer Tej
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">Jan 28, 2020</p>
+                                </td>
+                                <td class="px-5 py-5 bg-white text-sm">
+                                    <span class="rounded-full py-1 px-4 bg-green-300 text-green-900">Completed</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div
+                        class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                        <span class="text-xs xs:text-sm text-gray-900">
+                            Showing 1 to 5 of 50 Entries
+                        </span>
+                        <div class="inline-flex mt-2 xs:mt-0">
+                            <button
+                                class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
+                                Prev
+                            </button>
+                            <button
+                                class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+<!-- Start of Favourite Tab -->
+
+
+    <div id="favourite" class="py-4 px-4 panel">
+      <h1 class="text-lg text-center px-4 py-4 sm:text-2xl text-gray-900 lg:text-left">Favourite Products</h1>
+
+      <div class="py-4 flex items-center justify-center pb-16 md:pb-0">
+    <div class="block sm:flex sm:flex-wrap sm:justify-center lg:justify-start">
+    
+     <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d2.jpg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Alkaram Lawn Summer Collection 2020
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">700</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full text-white rounded-lg py-2 text-center cursor-pointer bg-green_y">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d3.jpeg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Khaadi Brand Supreme Collection Winter
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1200</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full text-white rounded-lg py-2 text-center cursor-pointer bg-green_y">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d4.jpg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Unstitched Colored Cotton Fabric Summer
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1500</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full text-white rounded-lg py-2 text-center cursor-pointer bg-green_y">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d3.jpeg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Unstitched Colored Cotton Fabric Summer
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1500</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full text-white rounded-lg py-2 text-center cursor-pointer bg-green_y">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="w-64 xl:w-48 mb-4 mx-2">
+        <div class="bg-white rounded-lg overflow-hidden shadow ">
+          <img class="md:h-64 h-32 w-full object-cover object-center" src="./assets/d2.jpg" alt="">
+          <div class="p-4 h-auto">
+            <a href="#" class="block font-semibold mb-2 text-md md:text-base lg:text-md">
+              Unstitched Colored Cotton Fabric Summer
+            </a>
+            <div>
+              <p class="text-xl text-gray-700">Rs. <span class="text-green_y">1500</span></p>
+              <p class="text-sm">Rating</p>
+            </div>
+            <div class="flex pt-4 pb-2">
+              <div class="w-full text-white rounded-lg py-2 text-center cursor-pointer bg-green_y">Share</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+    </div>
+
+
+<!-- End of Favourite Tab -->
+
+<!-- Start of Profile Tab -->
+
+    <div id="profile" class="py-4 lg:px-8 panel w-full">
+      <h1 class="text-lg text-center px-8 py-4 sm:text-2xl text-gray-900 md:text-left">Reseller Dashboard</h1>
+
+  <div class="flex flex-wrap justify-center px-8 lg:pb-0 pb-24">
+
+<!-- Card One Order Updates -->
+
+<div class="w-full sm:max-w-md md:w-1/2 md:mb-0 md:px-2 mb-8 shadow-lg rounded flex flex-col justify-center items-center text-center p-6 bg-white">
+  <div class="text-md font-bold flex flex-col text-gray-900"><span class="uppercase">Today</span> <span class="font-normal text-gray-700 text-sm">June 17</span></div>
+  <div class="w-32 h-32 flex items-center justify-center">
+    <svg class="h-20 text-light_green_y" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 512 512" fill="currentColor" xml:space="preserve">
+<g>
+  <g>
+    <path d="M458.732,422.212l-22.862-288.109c-1.419-18.563-17.124-33.098-35.737-33.098h-45.164v66.917
+      c0,8.287-6.708,14.995-14.995,14.995c-8.277,0-14.995-6.708-14.995-14.995v-66.917H187.028v66.917
+      c0,8.287-6.718,14.995-14.995,14.995c-8.287,0-14.995-6.708-14.995-14.995v-66.917h-45.164c-18.613,0-34.318,14.535-35.737,33.058
+      L53.265,422.252c-1.769,23.082,6.238,46.054,21.962,63.028C90.952,502.253,113.244,512,136.386,512h239.236
+      c23.142,0,45.434-9.747,61.159-26.721C452.505,468.305,460.512,445.333,458.732,422.212z M323.56,275.493l-77.553,77.553
+      c-2.929,2.929-6.768,4.398-10.606,4.398c-3.839,0-7.677-1.469-10.606-4.398l-36.347-36.347c-5.858-5.858-5.858-15.345,0-21.203
+      c5.858-5.858,15.355-5.858,21.203,0l25.751,25.741l66.956-66.956c5.848-5.848,15.345-5.848,21.203,0
+      C329.418,260.139,329.418,269.635,323.56,275.493z"/>
+  </g>
+</g>
+<g>
+  <g>
+    <path d="M256.004,0c-54.571,0-98.965,44.404-98.965,98.975v2.029h29.99v-2.029c0-38.037,30.939-68.986,68.976-68.986
+      s68.976,30.949,68.976,68.986v2.029h29.989v-2.029C354.969,44.404,310.575,0,256.004,0z"/>
+  </g>
+</g>
+</svg>
+  </div>
+  <p class="text-gray-700 mb-2">Orders update</p>
+  <div class="flex justify-around w-full">
+    <div class="flex flex-wrap px-2">
+      <span class="text-green_y font-bold text-3xl w-full">3</span>
+      <span class="text-base text-gray-600 w-full">new</span>
+    </div>
+    <div class="flex flex-wrap px-2">
+      <span class="text-orange-500 text-3xl font-bold w-full">6</span>
+      <span class="text-base text-gray-600 w-full">pending</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- Card Two Profile Card-->
+  <div class="bg-white w-full md:w-1/2 md:px-2 sm:max-w-md rounded overflow-hidden shadow-lg">
+    <div class="text-center p-6  border-b">
+      <img class="h-24 w-24 rounded-full mx-auto" src="/assets/faces/face17.jpg" alt="Randy Robertson" />
+      <p class="pt-2 text-lg text-grey-900 font-semibold">
+        Yasir Bakhtawar
+      </p>
+      <p class="text-sm text-orange-500">
+        Level Two Reseller
+      </p>
+    </div>
+    
+
+    <div class="flex justify-around">
+    <div class="flex w-1/2 flex-wrap px-4 py-6 md:py-8 text-center">
+      <span class="text-green_y font-bold text-3xl w-full">4.5</span>
+      <span class="text-base text-gray-600 w-full">5.0</span>
+    </div>
+    <div class="flex w-1/2 flex-wrap px-4 py-6 md:py-8 text-center">
+      <span class="text-green_y text-3xl font-bold w-full">85%</span>
+      <span class="text-base text-gray-600 w-full">success rate</span>
+    </div>
+  </div>
+  
+  </div>
+
+  <!-- Card Three Shop Card-->
+
+  <!-- <div class="bg-white w-full md:max-w-full sm:max-w-md mt-8 shadow-lg text-center">
+  <img src="/assets/shop.jpg" alt="People" class="w-full object-cover h-48 md:h-64">
+  <div class="p-6 md:p-6">
+    <h3 class="text-grey-900 mb-2 text-xl leading-tight sm:leading-normal">Yasir and Sons Wholesale Dealers</h3>
+    <div class="text-sm text-gray-700">
+      <p class="leading-normal">Shop no. 60, Yasir Plaza, China Market, Raja Bazar, Rawalpindi</p>
+    </div>
+  </div>
+</div> -->
+
+</div>
+    </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+ 
+
+<script type="text/javascript">
+
+     // Hamburger Menu Trigger
+     const menu =  document.getElementById('menu');
+     function toggle(){
+      menu.classList.toggle('hidden');
+     }
+
+
+     // Tabbed Content
+     const pills = document.querySelectorAll('.Lgpill');
+     const panels = document.querySelectorAll('.panel');
+     const sm_pills = document.querySelectorAll('.sm-pill');
+     
+     pills.forEach(function(pill){
+
+      pill.addEventListener('click', function(e){
+
+        const active_pill = this;
+        const active_SmPill = sm_pills[this.dataset.smpill];
+
+        sm_pills.forEach(function(pill){
+          if(pill == active_SmPill){
+            pill.classList.add('active-pill');
+          }else{
+            pill.classList.remove('active-pill');
+          }
+        });
+        pills.forEach(function(pill){
+          if(pill == active_pill){
+            pill.classList.add('active-pill');
+          }else{
+            pill.classList.remove('active-pill');
+          }
+        })
+        
+        const targetPanel = document.querySelector(this.dataset.target);
+        panels.forEach(function(panel){
+          if(panel == targetPanel){
+            panel.classList.add('active-panel');
+          }else{
+            panel.classList.remove('active-panel');
+          }
+
+        });
+
+      });
+
+     });
+
+
+     sm_pills.forEach(function(pill){
+
+      pill.addEventListener('click', function(e){
+
+        const active_pill = this;
+        const active_LgPill = pills[this.dataset.pill];
+
+        pills.forEach(function(pill){
+          if(pill == active_LgPill){
+            pill.classList.add('active-pill');
+          }else{
+            pill.classList.remove('active-pill');
+          }
+        });
+
+        sm_pills.forEach(function(pill){
+          if(pill == active_pill){
+            pill.classList.add('active-pill');
+          }else{
+            pill.classList.remove('active-pill');
+          }
+        })
+        
+        const targetPanel = document.querySelector(this.dataset.target);
+        panels.forEach(function(panel){
+          if(panel == targetPanel){
+            panel.classList.add('active-panel');
+          }else{
+            panel.classList.remove('active-panel');
+          }
+
+        });
+
+      });
+
+     });
+     
+    </script>
+</body>
+</html>

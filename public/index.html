@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <style type="text/css">
+      /* Chrome, Safari, Edge, Opera */
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+          }
+
+          /* Firefox */
+          input[type=number] {
+          -moz-appearance:textfield;
+          }
+    </style>
+</head>
+<body class='bg-white'>
+
+    <!-- Nav Component -->
+ <nav class="flex items-center justify-between flex-wrap p-6 shadow-xl">
+  <div class="flex items-center flex-shrink-0 text-green_y mr-6">
+    <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+    <span class="font-semibold text-xl tracking-tight">Yabie</span>
+  </div>
+  <div class="block lg:hidden">
+    <button class="flex items-center px-3 py-2 border rounded text-green_y border-green_y" onclick="toggle()">
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+  </div>
+  <div class="w-full block flex-end lg:flex lg:items-center lg:w-auto hidden lg:block" id="menu">
+    <div class="text-sm lg:flex-grow">
+      <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-green_y mr-4 lg:text-base">
+        Become a Reseller
+      </a>
+      <a href="db_ws.html" class="block mt-4 lg:inline-block lg:mt-0 text-green_y mr-4 lg:text-base">
+        Become a Supplier
+      </a>
+      <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-green_y lg:text-base">
+        Contact
+      </a>
+    </div>
+    <div>
+     <!--  <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a> -->
+    </div>
+  </div>
+</nav>
+        <!-- Header Section -->
+        <div class="flex bg-gray-100 lg:px-0 lg:py-0">
+        <div class="max-w-md mx-auto sm:max-w-full md:max-w-full lg:w-1/2 lg:max-w-full lg:py-20 xl:py-24 lg:px-10 ">
+            <div class="xl:mx-auto xl:max-w-xl xl:px-2 xl:py-2">
+              
+            
+                
+        
+                <h1 class="px-8 sm:px-16 lg:px-4 xl:px-0 mt-6 text-2xl leading-tight font-semibold text-gray-900 sm:text-4xl lg:mt-2 xl:text-4xl text-center md:text-left">Start your business with Yabie.
+                 <br class="hidden sm:inline">  <span class="text-green_y">Be independent.</span> </h1>
+                
+                <p class="px-8 sm:px-16 lg:px-4 xl:px-0 mt-4 text-gray-700 sm:mt-6 sm:text-md text-center md:text-left text-justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eos officiis perferendis minima ab nesciunt dolor laborum expedita? Assumend, repudiandae.
+                </p>
+                <div class="px-8 sm:px-16 lg:px-4 xl:px-0 m-4 sm:m-8 md:ml-0 sm:mt-8 text-center md:text-left">
+                    <a href="#" class="inline-block px-5 py-3 rounded-lg uppercase tracking-wider bg-green_y px-5 py-3 shadow-xl text-white sm:text-lg">Karo Apna Karobar</a>
+                </div>
+                <div class="relative">
+                  <img class="shadow-xl h-64 w-full object-cover object-center lg:hidden" src="./assets/images/5_trim.jpeg" alt="">
+                  <div class="absolute inset-0 w-full h-full bg-green_y opacity-50 lg:hidden"></div>
+                </div>
+                
+            </div>
+           
+            
+        </div>
+        <div class="hidden lg:block lg:w-1/2 lg:relative">
+            <img class="absolute inset-0 h-full w-full object-cover object-center" src="./assets/images/5_trim.jpeg" alt="">
+
+            <div class="absolute inset-0 w-full h-full bg-green_y opacity-50"></div>
+            <svg class="block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+        </div>
+    </div>
+
+
+   <!-- End of Header Section -->
+
+  <!-- Card-container -->
+
+          <div class="container py-8 pb-16 px-16 mx-auto">
+            <div class="py-4">
+              <h1 class="text-2xl text-center py-4 sm:text-4xl text-gray-900 lg:text-left">Earn from home in three simple steps</h1>
+              <div class="border-t-2 w-8 mx-auto border-green_y sm:w-16 lg:mx-0"></div>
+           </div>
+
+           <div class="flex flex-wrap">
+             <div class="flex flex-wrap w-full md:py-16">
+              <div class="md:w-1/2">
+                 <div class="flex flex-col justify-center items-center md:items-start h-full">
+                   <h1 class="text-6xl font-light py-4">Browse</h1>
+                   <p class="text-justify md:pr-32">Log in to your profile and browse and choose the product that best suits the people around you.</p>
+                 </div>
+               </div>
+               <div class="md:w-1/2 sm:w-full pt-8">
+                 <img class=" mx-auto" style="max-height: 24rem" src="./assets/home/browse.svg">
+               </div>
+               
+             </div>
+             <div class="flex flex-col-reverse md:flex-row w-full sm:py-8 md:py-16">
+              
+               <div class="md:w-1/2 sm:w-full pt-8">
+                 <img class=" mx-auto" style="max-height: 24rem" src="./assets/home/share.svg">
+               </div>
+               <div class="md:w-1/2 ">
+                 <div class="flex flex-col justify-center items-center md:items-start h-full">
+                   <h1 class="md:pl-32 text-6xl font-light py-4">Share</h1>
+                   <p class="text-justify md:pl-32">Share the products that fit your market through the social media platforms.</p>
+                 </div>
+               </div>
+             </div>
+             <div class="flex flex-wrap w-full sm:py-8 md:py-16">
+              <div class="md:w-1/2">
+                 <div class="flex flex-col block justify-center items-center md:items-start h-full">
+                   <h1 class="text-6xl font-light py-4">Earn</h1>
+                   <p class="text-justify md:pr-32">Earn via your friend, family or influence circle by selling the shared product.</p>
+                 </div>
+               </div>
+               <div class="md:w-1/2 sm:w-full pt-8">
+                 <img class="mx-auto" style="max-height: 24rem" src="./assets/home/earn.svg">
+               </div>
+               
+             </div>
+             
+             
+           </div>
+          </div>
+
+
+
+  <!-- End of Card Container -->
+
+
+      <!-- Picture with a message -->
+
+      <div class="w-full h-full relative picture-section">
+        
+        <img class="absolute inset-0 w-full h-full object-cover object-center" src="./assets/images/4_trim.jpg" alt="">
+        <div class="absolute inset-0 w-full h-full bg-green_y opacity-50"></div>
+        <div 
+        class="absolute inset-0 px-16 py-24 w-full h-full text-2xl sm:text-4xl lg:text-6xl text-white text-left  "
+        >
+          Its high time
+          <br class="sm:hidden">
+          <span class="bg-green_y px-2 sm:px-4">YOU</span>
+          <br class="hidden sm:block">
+           stepped
+           <br class="sm:hidden"> into the world <br class="hidden sm:block"> of E-commerce with <span class="bg-green_y px-2 sm:px-4">YABIE</span>
+        </div>
+      </div>
+     
+
+     <!-- Pattern Container -->
+
+     <div class="pt-8 pb-16 px-16 flex flex-wrap bg-pattern">
+      <div class="py-4 w-full">
+          <h1 class="text-2xl text-center py-4 sm:text-4xl text-gray-900 lg:text-left">Being independent is just a click away with Yabie!</h1>
+          <div class="border-t-2 w-8 mx-auto border-green_y sm:w-32 lg:mx-0"></div>
+       </div>
+      <div class="w-full py-8 max-w-xl lg:max-w-full mx-auto text-center text-gray-700 text-base lg:text-left text-justify">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+        </p>
+      </div>
+      <div class="mt-2 w-full text-center lg:text-left">
+                    <a href="#" class="inline-block bg-green_y px-5 py-3 rounded-lg shadow-xl uppercase text-white tracking-wider sm:text-xl">Aaj say hee!</a>
+      </div>
+     </div>
+
+
+    <!-- End of Pattern Container -->
+
+<!-- Start of Social Media Platform Container -->
+
+
+
+
+<div class="overflow-hidden flex items-center justify-center">
+ <style>
+.snap-x {
+    scroll-snap-type: x mandatory;
+    
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+</style>
+
+<div class="flex flex-col items-center md:mx-auto max-w-full md:px-24 lg:px-16 pb-4 sm:pb-16">
+  <div class="py-16 lg:max-w-full lg:mr-auto">
+  <h1 class="max-w-xs px-4 sm:max-w-xl md:px-2 lg:px-0 lg:max-w-full text-2xl text-center py-4 sm:text-4xl text-gray-900 lg:text-left ">Leverage the platforms you already have</h1>
+  <div class="border-t-2 w-8 mx-auto border-green_y sm:w-32 lg:mx-0"></div>
+</div>
+  <div class="sm:w-4/5 w-full md:w-full bg-white rounded overflow-x-hidden flex snap-x" style="min-height: 19rem" id="slides">
+
+    <div class="w-full h-full flex flex-col md:flex-row items-center justify-center bg-gray-100 shadow-xl snap-start flex-shrink-0 relative rounded-lg block" id="slide-1">
+      <div class="relative w-full md:w-3/5 xl:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 15rem;">
+        
+        <div class="absolute inset-0 w-full h-full bg-pattern "></div>
+        <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current">
+          <img class="w-32 h-32" src="./assets/social/whatsapp.svg">
+        </div>
+      </div>
+      <div class="w-4/5  sm:w-full md:w-full lg:w-3/5 h-full flex items-center bg-gray-100 rounded-lg">
+        <div class="p-8 md:pr-12 lg:pr-24 lg:pl-16 md:pl-8 md:py-12">
+          <p class="text-gray-700 text-center sm:text-left text-justify"><span class="text-gray-900">WhatsApp</span> is a social platfrom leveraged by marketers all around the world to build customers. Why can't you?</p>
+          <a class="flex items-baseline justify-center sm:justify-start mt-3 text-green_y" href="">
+            <spans>Learn to earn with Yabie</span>
+            <span class="text-xs ml-1">&#x279c;</span>
+          </a>
+        </div>
+        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+      </div>
+    </div>
+    <div class=" w-full h-full flex flex-col md:flex-row items-center justify-center bg-gray-100 shadow-xl snap-start flex-shrink-0 relative rounded-lg block" id="slide-2">
+      <div class="relative w-full md:w-3/5 xl:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 15rem;">
+        
+        <div class="absolute inset-0 w-full h-full bg-pattern "></div>
+        <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+          <img class="w-32 h-32" src="./assets/social/facebook.svg">
+        </div>
+      </div>
+      <div class="w-full sm:w-full md:w-full h-full flex items-center bg-gray-100 rounded-lg">
+        <div class="p-8 md:pr-12 lg:pr-24 lg:pl-16 md:pl-8 md:py-12">
+          <p class="text-gray-700 text-center sm:text-left text-justify"><span class="text-gray-900">Facebook</span> is a social platfrom leveraged by marketers all around the world to build customers. Why can't you?</p>
+          <a class="flex items-baseline justify-center sm:justify-start mt-3 text-green_y" href="">
+            <span>Learn to earn with Yabie</span>
+            <span class="text-xs ml-1">&#x279c;</span>
+          </a>
+        </div>
+        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+      </div>
+    </div>
+    <div class=" w-full h-full flex flex-col md:flex-row items-center justify-center bg-gray-100 shadow-xl snap-start flex-shrink-0 relative rounded-lg block" id="slide-3">
+      <div class="relative w-full md:w-3/5 xl:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 15rem;">
+        
+        <div class="absolute inset-0 w-full h-full bg-pattern "></div>
+        <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+          <img class="w-32 h-32" src="./assets/social/instagram.svg">
+        </div>
+      </div>
+      <div class="w-full sm:w-full md:w-full h-full flex items-center bg-gray-100 rounded-lg">
+        <div class="p-8 md:pr-12 lg:pr-24 lg:pl-16 md:pl-8 md:py-12">
+          <p class="text-gray-700 text-center sm:text-left text-justify"><span class="text-gray-900">Instagram</span> is a social platfrom leveraged by marketers all around the world to build customers. Why can't you?</p>
+          <a class="flex items-baseline justify-center sm:justify-start mt-3 text-green_y" href="">
+            <span>Learn to earn with Yabie</span>
+            <span class="text-xs ml-1">&#x279c;</span>
+          </a>
+        </div>
+        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+      </div>
+    </div>
+    <div class=" w-full h-full flex flex-col md:flex-row items-center justify-center bg-gray-100 shadow-xl snap-start flex-shrink-0 relative rounded-lg block" id="slide-4">
+      <div class="relative w-full md:w-3/5 xl:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 15rem;">
+        
+        <div class="absolute inset-0 w-full h-full bg-pattern "></div>
+        <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white">
+          <img class="w-32 h-32" src="./assets/social/tiktok.svg">
+        </div>
+      </div>
+      <div class="w-full sm:w-full md:w-full h-full flex items-center bg-gray-100 rounded-lg">
+        <div class="p-8 md:pr-12 lg:pr-24 lg:pl-16 md:pl-8 md:py-12">
+          <p class="text-gray-700 text-center sm:text-left text-justify"><span class="text-gray-900">TikTok</span> is a social platfrom leveraged by marketers all around the world to build customers. Why can't you?</p>
+          <a class="flex items-baseline justify-center sm:justify-start mt-3 text-green_y" href="">
+            <span>Learn to earn with Yabie</span>
+            <span class="text-xs ml-1">&#x279c;</span>
+          </a>
+        </div>
+        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  
+   <ul class="flex p-12">
+      <li class="px-2 w-1/2 slide-nav cursor-pointer" data-hash="slide-1"><img class="h-16 mx-auto" src="./assets/social/whatsapp.svg" alt=""></li>
+      <li class="px-2 w-1/2 slide-nav cursor-pointer" data-hash="slide-2"><img class="h-16 mx-auto" src="./assets/social/facebook.svg" alt=""></li>
+      <li class="px-2 w-1/2 slide-nav cursor-pointer" data-hash="slide-3"><img class="h-16 mx-auto" src="./assets/social/instagram.svg" alt=""></li>
+      <li class="px-2 w-1/2 slide-nav cursor-pointer" data-hash="slide-4"><img class="h-16 mx-auto" src="./assets/social/tiktok.svg" alt=""></li>
+    </ul>
+</div>
+</div>
+
+
+
+<!-- End of Social Media Container -->
+
+    <!-- Subscription Form -->
+
+     <div class="py-8 pb-16 px-16 flex flex-wrap bg-green_y text-white">
+       <div class="w-full text-2xl text-center py-4 sm:text-4xl lg:text-left">
+         <h1 class="py-4">Your life can change with Yabie!</h1>
+         <div class="border-t-2 w-8 mx-auto border-white sm:w-32 lg:mx-0"></div>
+       </div>
+
+       <div class="w-full">
+
+          <div class="w-full text-xl text-center py-4 sm:text-2xl lg:text-left">Let's improve your life</div>
+
+          <form class="w-full flex flex-wrap mx-auto sm:justify-between">
+
+            <input class="bg-gray-100 h-12 text-green_y focus:outline-none  border border-gray-100 rounded-lg py-2 px-4 mt-4 block w-full sm:w-64 md:w-1/3 sm:mr-2 appearance-none leading-normal" type="name" placeholder="Your good name">
+            
+            <input class="bg-gray-100 h-12 text-green_y focus:outline-none  border border-gray-100 rounded-lg py-2 px-4 mt-4 block w-full sm:w-64 md:w-1/3 appearance-none leading-normal" type="number" placeholder="Your phone number">
+            
+            <button class="mt-4 h-12 max-w-lg sm:max-w-xl mx-auto text-center font-semibold inline-block bg-skin_y px-5 py-2 rounded-lg shadow-xl uppercase text-green_y tracking-wider md:text-md">Submit</button>
+          </form>
+       </div>
+     </div>
+
+     <!-- End Subscription Form -->
+    
+
+    <!-- Footer Start -->
+
+
+    <footer class="overflow-hidden flex items-center justify-center">
+      <div class="container p-16 pb-4 text-center md:text-left">
+
+        <div class="md:flex mb-4">
+
+
+            <div class="md:w-1/2 h-auto md:pr-8">
+                <div class="text-green_y text-4xl sm:text-6xl font-semibold tracking-wider mb-2">Yabie.pk</div>
+                <p class="text-base leading-normal lg:text-lg">We provide you the luxury of earning from your home!</p>
+            </div>
+
+
+            <div class="md:w-1/4 h-auto md:mt-0 mt-8">
+                      <div class="text-2xl lg:text-4xl text-light_green_y mb-2">Company</div>
+                <ul class="list-reset leading-normal">
+                    <li class="hover:text-green_y py-3 lg:text-lg cursor-pointer">Career</li>
+                    <li class="hover:text-green_y py-3 lg:text-lg cursor-pointer">Yabie Blog</li>
+                    <li class="hover:text-green_y py-3 lg:text-lg cursor-pointer">T&C</li>
+                    <li class="hover:text-green_y py-3 lg:text-lg cursor-pointer">Privacy</li>
+                </ul>
+            </div>
+
+
+            <div class="md:w-1/4 md:mt-0 mt-8 h-auto">
+                <div class="text-2xl lg:text-4xl text-light_green_y mb-2">Contact Us</div>
+                <ul class="list-reset leading-normal">
+                    <li class="hover:text-green_y py-3 leading-normal lg:text-lg cursor-pointer">+92 300 1234567</li>
+                    <li class="hover:text-green_y py-3 leading-normal lg:text-lg cursor-pointer">help@yabie.pk</li>
+                </ul>
+            </div>
+            
+      </div>
+
+      <hr class="border-t-2 border-light_green_y pb-4">
+      <div class="sm:flex sm:justify-between">
+        <div class="py-4">
+          <ul class="flex">
+            <li>
+              <a href=""><img class="h-12 pr-2 cursor-pointer" src="./assets/social/fb.png"></a>
+          </li>
+            <li>
+              <a href=""><img class="h-12 px-2 cursor-pointer" src="./assets/social/yt.png"></a>
+          </li>
+            <li>
+              <a href=""><img class="h-12 px-2 cursor-pointer" src="./assets/social/inst.png"></a>
+          </li>
+            <li>
+              <a href=""><img class="h-12 pl-2 cursor-pointer" src="./assets/social/wa.png"></a>
+          </li>
+          </ul>
+        </div>
+        <div class="py-6">
+          Copyright @ <span class="text-green_y">Yabie.pk Pvt. Ltd.</span> 
+        </div>
+      </div>
+</div>
+    </footer>
+
+    <!-- Footer End -->
+
+
+
+
+    <!-- Script Start -->
+
+    <script type="text/javascript">
+     const menu =  document.getElementById('menu');
+     function toggle(){
+      menu.classList.toggle('hidden');s
+     }
+
+
+     var slideNav = document.getElementsByClassName('slide-nav');
+     for (var i = slideNav.length - 1; i >= 0; i--) {
+       slideNav[i].addEventListener('click', function(e){
+        const slide = this.getAttribute('data-hash');
+        document.getElementById(`${slide}`).classList.remove('snap-start');
+        document.getElementById(`${slide}`).classList.add('snap-start');
+        window.location.href = `#${slide}`;
+
+       })
+     }
+    </script>
+    
+
+
+
+    <!-- Script End -->
+</body>
+</html>
